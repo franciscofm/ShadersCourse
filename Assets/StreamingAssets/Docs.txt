@@ -1,0 +1,45 @@
+Standard surface parameter type
+The SurfaceOutput struct has the following properties:
+	fixed3 Albedo;: This is the diffuse color of the material
+	fixed3 Normal;: This is the tangent space normal, if written
+	fixed3 Emission;: This is the color of the light emitted by the material (this
+	property is declared as half3 in the Standard Shaders)
+	fixed Alpha;: This is the transparency of the material
+	half Specular;: This is the specular power from 0 to 1
+	fixed Gloss;: This is the specular intensity
+
+The SurfaceOutputStandard struct has the following properties:
+	fixed3 Albedo;: This is the base color of the material (whether it’s diffuse or
+	specular)
+	fixed3 Normal;
+	half3 Emission;: This property is declared as half3, while it was defined as fixed3
+	in SurfaceOutput
+	fixed Alpha;
+	half Occlusion;: This is the occlusion (default 1)
+	half Smoothness;: This is the smoothness (0 = rough, 1 = smooth)
+	half Metallic;: 0 = non-metal, 1= metal
+The SurfaceOutputStandardSpecular struct has the following properties:
+	fixed3 Albedo;.
+	fixed3 Normal;.
+	half3 Emission;.
+	fixed Alpha;.
+	half Occlusion;.
+	half Smoothness;.
+	fixed3 Specular;: This is the specular color. This is very different from the
+	Specular property in SurfaceOutput as it allows specifying a color rather than a
+single value.
+
+Matrix:
+
+float4x4 matrix;
+
+float first = matrix._m00;
+float last = matrix._m33;
+The _mRC notation can also be chained:
+float4 diagonal = matrix._m00_m11_m22_m33;
+
+An entire row can be selected using squared brackets:
+
+float4 firstRow = matrix[0];
+// Equivalent to
+float4 firstRow = matrix._m00_m01_m02_m03;
