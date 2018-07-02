@@ -1,4 +1,8 @@
-﻿Shader "Custom/DisolveAlpha" {
+﻿//8. DisolveAlpha
+
+//Objetivo: Crear un efecto de desvanecimiento mediante el alpha del Albedo
+
+Shader "Custom/DisolveAlpha" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
