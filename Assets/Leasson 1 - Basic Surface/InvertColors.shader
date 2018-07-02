@@ -6,7 +6,7 @@ Shader "Custom/InvertColor" {
 
 	//Los shaders pueden depender de valores que se definan fuera de el mismo, esto se realiza mediante
 	//el struct/apartado Properties.
-	//Como que el tipo de variables primitivas que podemos usar depende del lenguaje, estas seran las de GL/HSLS
+	//Como que el tipo de variables primitivas que podemos usar depende del lenguaje, estas seran las de CG/HLSL
 	//Pero en este segmento, es lo que se recibe de Unity, entonces es una especie de paso intermedio, con otro tipo
 	//de variables:
 	//	Range(min, max) - Crea un slider con un float en Inspector (se clampea se se excede en runtime)
@@ -42,7 +42,7 @@ Shader "Custom/InvertColor" {
 		//y SubShader, que es donde definimos el comportamiento, lo que necesitamos hacer ahora, es pasar el valor
 		//de estas variables al SubShader para que las pueda usar, para hacer esto, lo que debemos hacer es volver
 		//a definir las Propiedades que queremos en el subshader, con el mismo NombreVariable y con un tipo de variable,
-		//esta vez del lenguaje GL que sea compatible con el previo
+		//esta vez del lenguaje CG que sea compatible con el previo
 		sampler2D _MainTex;
 		fixed4 _Color;
 
