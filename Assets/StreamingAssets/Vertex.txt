@@ -1,0 +1,27 @@
+Base structure, contains the least amount of data that most shaders will use.
+struct appdata_base
+ {
+     float4 vertex   : POSITION;  // The vertex position in model space.
+     float3 normal   : NORMAL;    // The vertex normal in model space.
+     float4 texcoord : TEXCOORD0; // The first UV coordinate.
+ };
+Tangents included - tangents are used to rotate the normals of normal maps when the normal maps are also rotated. Use this structure if you wish to intervene in their calculation process and manipulate them. If you do not want to manipulate tangents you may use the base structure instead since they will be calculated anyway. <TODO: Determine if the tangents need to be transformed if they are manipulated here, or if they can be left in model space.>
+
+ struct appdata_tan
+ {
+     float4 vertex   : POSITION;  // The vertex position in model space.
+     float3 normal   : NORMAL;    // The vertex normal in model space.
+     float4 texcoord : TEXCOORD0; // The first UV coordinate.
+     float4 tangent  : TANGENT;   // The tangent vector in model space (used for normal mapping).
+ };
+All the possible fields you can derive from a mesh about to be rendered are in this structure.
+
+ struct appdata_full
+ {
+     float4 vertex    : POSITION;  // The vertex position in model space.
+     float3 normal    : NORMAL;    // The vertex normal in model space.
+     float4 texcoord  : TEXCOORD0; // The first UV coordinate.
+     float4 texcoord1 : TEXCOORD1; // The second UV coordinate.
+     float4 tangent   : TANGENT;   // The tangent vector in Model Space (used for normal mapping).
+     float4 color     : COLOR;     // Per-vertex color
+ };
