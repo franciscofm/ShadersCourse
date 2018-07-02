@@ -29,17 +29,14 @@ The SurfaceOutputStandardSpecular struct has the following properties:
 	Specular property in SurfaceOutput as it allows specifying a color rather than a
 single value.
 
-Matrix:
-
-float4x4 matrix;
-
-float first = matrix._m00;
-float last = matrix._m33;
-The _mRC notation can also be chained:
-float4 diagonal = matrix._m00_m11_m22_m33;
-
-An entire row can be selected using squared brackets:
-
-float4 firstRow = matrix[0];
-// Equivalent to
-float4 firstRow = matrix._m00_m01_m02_m03;
+Surface Input struct:
+	float3 viewDir - contains view direction, for computing Parallax effects, rim lighting etc.
+	float4 with COLOR semantic - contains interpolated per-vertex color.
+	float4 screenPos - contains screen space position for reflection or screenspace effects. Note that this is not suitable for GrabPass; you need to compute custom UV yourself using ComputeGrabScreenPos function.
+	float3 worldPos - contains world space position.
+	float3 worldRefl - contains world reflection vector if surface shader does not write to o.Normal. See Reflect-Diffuse shader for example.
+	float3 worldNormal - contains world normal vector if surface shader does not write to o.Normal.
+	float3 worldRefl; INTERNAL_DATA - contains world reflection vector if surface shader writes to o.Normal. 
+		To get the reflection vector based on per-pixel normal map, use WorldReflectionVector (IN, o.Normal). See Reflect-Bumped shader for example.
+	float3 worldNormal; INTERNAL_DATA - contains world normal vector if surface shader writes to o.Normal. 
+		To get the normal vector based on per-pixel normal map, use WorldNormalVector (IN, o.Normal).

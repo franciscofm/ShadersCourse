@@ -1,4 +1,6 @@
-﻿// 1.
+﻿// 1.AllWhite
+
+//Objetivo: pintar un objeto de blanco
 
 //Esta cabecera 'Shader' sirve para marcar el principio de un shader, como una clase
 //El texto '"Custom/All White"' sirve para darle un nombre a este shader, si hay dos
@@ -52,7 +54,7 @@ Shader "Custom/All White" {
 			//Ya que lo que queremos hacer es pintar el objeto entero de blanco, IN no nos interesa,
 			//"o" representa el pixel final de la textura, entonces lo que debemos hacer es cambiar el color
 			//del pixel (Albedo) a blanco:
-			o.Albedo = 1;
+			o.Albedo = (1,1,1);
 		}
 		ENDCG
 	}

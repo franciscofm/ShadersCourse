@@ -1,0 +1,14 @@
+Matrix:
+
+float4x4 matrix;
+
+float first = matrix._m00;
+float last = matrix._m33;
+The _mRC notation can also be chained:
+float4 diagonal = matrix._m00_m11_m22_m33;
+
+An entire row can be selected using squared brackets:
+
+float4 firstRow = matrix[0];
+// Equivalent to
+float4 firstRow = matrix._m00_m01_m02_m03;
