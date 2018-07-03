@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 832982086}
   - component: {fileID: 832982085}
   - component: {fileID: 832982084}
+  - component: {fileID: 832982088}
   m_Layer: 0
   m_Name: DisolveAlpha
   m_TagString: Untagged
@@ -346,6 +347,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &832982088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 832982083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009c45cab0e17a4469b2255e1e15cef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  property: _SliceAmount
+  minValue: 0
+  maxValue: 1
+  speed: 1
 --- !u!1 &836909925
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +457,7 @@ GameObject:
   - component: {fileID: 895292483}
   - component: {fileID: 895292482}
   - component: {fileID: 895292481}
+  - component: {fileID: 895292485}
   m_Layer: 0
   m_Name: Power
   m_TagString: Untagged
@@ -514,6 +531,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &895292485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 895292480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009c45cab0e17a4469b2255e1e15cef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  property: _Power
+  minValue: 0
+  maxValue: 10
+  speed: 0.1
 --- !u!1 &907711124
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,6 +641,7 @@ GameObject:
   - component: {fileID: 981583533}
   - component: {fileID: 981583532}
   - component: {fileID: 981583531}
+  - component: {fileID: 981583535}
   m_Layer: 0
   m_Name: Extrusion
   m_TagString: Untagged
@@ -682,6 +715,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &981583535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 981583530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009c45cab0e17a4469b2255e1e15cef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  property: _Amount
+  minValue: -0.03
+  maxValue: 0.03
+  speed: 0.5
 --- !u!1 &1129980895
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +741,7 @@ GameObject:
   - component: {fileID: 1129980898}
   - component: {fileID: 1129980897}
   - component: {fileID: 1129980896}
+  - component: {fileID: 1129980900}
   m_Layer: 0
   m_Name: Distance
   m_TagString: Untagged
@@ -766,6 +815,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1129980900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129980895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009c45cab0e17a4469b2255e1e15cef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  property: _ClearRange
+  minValue: 0
+  maxValue: 3.2
+  speed: 5.1
 --- !u!1 &1405281546
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +925,7 @@ GameObject:
   - component: {fileID: 1462101273}
   - component: {fileID: 1462101272}
   - component: {fileID: 1462101271}
+  - component: {fileID: 1462101275}
   m_Layer: 0
   m_Name: Disolve
   m_TagString: Untagged
@@ -934,6 +999,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1462101275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1462101270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009c45cab0e17a4469b2255e1e15cef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  property: _SliceAmount
+  minValue: 0
+  maxValue: 1
+  speed: 1
 --- !u!1 &1587978333
 GameObject:
   m_ObjectHideFlags: 0

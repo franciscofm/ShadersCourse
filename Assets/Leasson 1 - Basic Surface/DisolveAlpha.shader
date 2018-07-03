@@ -16,9 +16,32 @@ Shader "Custom/DisolveAlpha" {
 		_EmissionAmount("Emission amount", float) = 2.0
 	}
 	SubShader {
-		Tags { "Queue"="Transparent" "RenderType"="Transparent" }
+		//Como hemos dicho en 1.WhiteAll, los tags sirven para darle informacion a Unity
+		//En total hay 7:
+		//	Queue (Rendering Order)
+		//	RenderType
+		//	DisableBatching
+		//	ForceNoShadowCasting
+		//	IgnoreProjector
+		//	CanUseSpriteAtlas
+		//	PreviewType
+		//Nos centraremos en Queue y RenderType, para mas informacion
+		//https://docs.unity3d.com/Manual/SL-SubShaderTags.html
+
+		//Queue le dice a Unity cuando toca pintar un objeto en camara, el orden por defecto
+		//que tiene Unity es Background -> Geometry -> AlphaTest -> Overlay
+		//El valor por defecto de cualquier Shader es Geometry
+		//En si mismo, el valor del tag es un entero, que significa un valor de prioridad:
+		//"Background is 1000, Geometry is 2000, AlphaTest is 2450, Transparent is 3000 and Overlay is 4000"
+		//Se puede asignar un valor arbitrario, a valor mas bajo, antes se pinta, opacas son hasta 2500
+		//Teniendo esto en cuenta hace que lo que este en Transparent se pinte, dentro del mismo objeto,
+		//de la parte mas alejada de la camara a la mas cercana, haciendo que la superposicion de pixeles
+		//sea correcta, en Geometry, no seria necesario pintar la parte alejada, ya que la cercana la taparia,
+		//y al ser opaco, no se veria igualmente, lo que supondria una perdida de recursos
+
+		//RenderType
+		Tags { "Queue"="Transparent" "RenderType"="Opaque" }
 		LOD 200
-		//Cull Off //if On -> Hides the back of the faces
 		CGPROGRAM
 
 		#pragma surface surf Lambert alpha //addshadow 
